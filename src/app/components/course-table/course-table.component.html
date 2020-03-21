@@ -1,5 +1,31 @@
-<ul>
-    <li *ngFor="let course of courses">
-        {{course.title}}
-    </li>
-</ul>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto ">
+        <li class="nav-item mr-2">
+            <button class="btn btn-outline-light wbdv-field wbdv-hamburger">
+                <i class="fas fa-bars text-light "></i>
+            </button>
+        </li>
+    </ul>
+    <div class=" d-none d-sm-block">
+        <a class=" navbar-brand wbdv-label wbdv-course-manager" href="#">Course Manager</a>
+    </div>
+    <div class="collapse navbar-collapse ">
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr *ngFor="let course of courses" class="wbdv-row wbdv-course">
+                            <td class="align-middle wbdv-row wbdv-title"><a
+                                    href="#">{{course.title}}</a></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
