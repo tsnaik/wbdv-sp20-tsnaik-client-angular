@@ -7,7 +7,7 @@
         </li>
     </ul>
     <div class=" d-none d-sm-block">
-        <a class=" navbar-brand wbdv-label wbdv-course-manager" href="#">Course Manager</a>
+        <a class=" navbar-brand wbdv-label wbdv-course-manager" href="#">Course Viewer</a>
     </div>
     <div class="collapse navbar-collapse ">
     </div>
@@ -17,11 +17,30 @@
         <div class="col">
             <div class="table-responsive">
                 <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col" class="wbdv-header wbdv-title">Title</th>
+                            <th class="d-none d-md-table-cell wbdv-header wbdv-owner" scope="col">Owned
+                                By
+                            </th>
+                            <th class="d-none d-md-table-cell wbdv-header wbdv-last-modified"
+                                scope="col">Last Modified
+                            </th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
                     <tbody>
                         <tr *ngFor="let course of courses" class="wbdv-row wbdv-course">
+                            <th scope="row" class="align-middle wbdv-row wbdv-icon"><i
+                                    class="fas fa-book"></i></th>
                             <td class="align-middle wbdv-row wbdv-title"><a
-                                    href="#">{{course.title}}</a></td>
-
+                                    href="table/courses/{{course._id}}/modules">{{course.title}}</a></td>
+                            <td class="align-middle d-none d-md-table-cell wbdv-row wbdv-owner">{{course.owned_by}}
+                            </td>
+                            <td class="align-middle d-none d-md-table-cell wbdv-row wbdv-modified-date">
+                                {{course.last_modified}}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
