@@ -13,11 +13,11 @@ export class CourseViewerComponent implements OnInit {
   public course;
 
   constructor(private service: CourseServiceClient,
-    private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   public ngOnInit(): void {
-    this.route.params.subscribe(async (params) =>
-      await this.service.findCourseById(params.cid)
+    this.route.params.subscribe((params) =>
+      this.service.findCourseById(params.cid)
         .then((course) => this.course = course));
   }
 

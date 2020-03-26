@@ -1,0 +1,18 @@
+<div class="container-fluid d-flex flex-column">
+    <div class="row flex-fill">
+        <div class="col-sm-4 col-md-3 mt-3 wbdv-nav-col h-100 ">
+            <ul class="nav nav-pills flex-column wbdv-module-list">
+                <li *ngFor="let module of modules" class="nav-item wbdv-module-item">
+                    <span>
+                        <div class="container">
+                            <div class=" row">
+                                <div class="col-8  mt-1"><a href="table/courses/{{courseId}}/modules/{{module._id}}/lessons">{{module.title}}</a></div>
+                            </div>
+                        </div>
+                    </span></li>
+
+            </ul>
+        </div>
+        <div class="col-sm-8 mt-sm-3 col-md-9"></div>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+import { ModuleListComponent } from './components/module-list/module-list.component';
 import { CourseViewerComponent } from './components/course-viewer/course-viewer.component';
 import { CourseTableComponent } from './components/course-table/course-table.component';
 import { NgModule } from '@angular/core';
