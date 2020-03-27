@@ -10,6 +10,9 @@ import { ModuleListComponent } from './components/module-list/module-list.compon
 import { LessonTabsComponent } from './components/lesson-tabs/lesson-tabs.component';
 import { HomeComponent } from './components/home/home.component';
 import { QuizComponent } from './components/quiz/quiz.component';
+import { QuizServiceClient } from './services/quiz.service.client';
+import { QuestionServiceClient } from './services/question.service.client';
+import { QuizzesComponent } from './components/quizzes/quizzes.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,15 @@ import { QuizComponent } from './components/quiz/quiz.component';
     LessonTabsComponent,
     HomeComponent,
     QuizComponent,
+    QuizzesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [CourseServiceClient],
+  providers: [CourseServiceClient, QuizServiceClient,
+    QuestionServiceClient
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

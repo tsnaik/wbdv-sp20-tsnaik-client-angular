@@ -31,7 +31,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let course of courses" class="wbdv-row wbdv-course">
-                            <th scope="row" class="align-middle wbdv-row wbdv-icon"><i class="fas fa-book"></i></th>
+                            <td scope="row" class="align-middle wbdv-row wbdv-icon"><i class="fas fa-book"></i></td>
                             <td class="align-middle wbdv-row wbdv-title"><a
                                     [routerLink]="['/table/courses',course._id,'modules']"
                                     routerLinkActive="router-link-active">{{course.title}}</a></td>
@@ -40,6 +40,7 @@
                             <td class="align-middle d-none d-md-table-cell wbdv-row wbdv-modified-date">
                                 {{course.last_modified}}
                             </td>
+                            <td><a [routerLink]="['/table/courses', course._id,'quizzes']" routerLinkActive="router-link-active">Quizzes</a></td>
                         </tr>
                     </tbody>
                 </table>
