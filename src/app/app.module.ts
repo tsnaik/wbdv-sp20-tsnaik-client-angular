@@ -8,6 +8,7 @@ import { CourseTableComponent } from './components/course-table/course-table.com
 import { CourseViewerComponent } from './components/course-viewer/course-viewer.component';
 import { ModuleListComponent } from './components/module-list/module-list.component';
 import { LessonTabsComponent } from './components/lesson-tabs/lesson-tabs.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LessonTabsComponent } from './components/lesson-tabs/lesson-tabs.compon
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
