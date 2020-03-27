@@ -11,14 +11,16 @@ import { CourseServiceClient } from 'src/app/services/CourseServiceClient';
 
 export class CourseViewerComponent implements OnInit {
   public course;
-
+  public moduleId: string;
   constructor(private service: CourseServiceClient,
               private route: ActivatedRoute) { }
 
   public ngOnInit(): void {
-    this.route.params.subscribe((params) =>
+    this.route.params.subscribe((params) => {
+      this.moduleId = params.mid;
       this.service.findCourseById(params.cid)
-        .then((course) => this.course = course));
+        .then((course) => this.course = course);
+    });
   }
 
 }

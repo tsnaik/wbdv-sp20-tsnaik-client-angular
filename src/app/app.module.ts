@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CourseTableComponent } from './components/course-table/course-table.component';
 import { CourseViewerComponent } from './components/course-viewer/course-viewer.component';
 import { ModuleListComponent } from './components/module-list/module-list.component';
+import { LessonTabsComponent } from './components/lesson-tabs/lesson-tabs.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ModuleListComponent } from './components/module-list/module-list.compon
     CourseTableComponent,
     CourseViewerComponent,
     ModuleListComponent,
+    LessonTabsComponent,
   ],
   imports: [
     BrowserModule,

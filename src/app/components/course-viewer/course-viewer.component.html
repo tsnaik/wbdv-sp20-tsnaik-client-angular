@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item mr-2"><a href="table/courses/" class="btn btn-outline-light  "><i
+        <li class="nav-item mr-2"><a [routerLink]="['/table/courses']"
+            routerLinkActive="router-link-active" class="btn btn-outline-light  "><i
                     class="fas fa-times text-light wbdv-course-editor wbdv-close "></i></a></li>
     </ul><span class="navbar-brand wbdv-course-title">{{course?.title}}</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -8,5 +9,13 @@
             class="navbar-toggler-icon"></span>
     </button>
 </nav>
-
-<app-module-list></app-module-list>
+<div class="container-fluid d-flex flex-column">
+    <div class="row flex-fill">
+        <div class="col-sm-4 col-md-3 mt-3 wbdv-nav-col h-100 ">
+            <app-module-list></app-module-list>
+        </div>
+        <div class="col-sm-8 mt-sm-3 col-md-9">
+            <app-lesson-tabs *ngIf="moduleId"></app-lesson-tabs>
+        </div>
+    </div>
+</div>
