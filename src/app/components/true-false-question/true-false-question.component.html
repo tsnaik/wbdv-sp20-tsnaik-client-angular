@@ -1,0 +1,29 @@
+<div class="container">
+    <h5>{{question.question}} <i class="fa" [class.fa-check]="isGraded && isRightAnswer" 
+        [class.fa-times]="isGraded && !isRightAnswer"></i></h5>
+    <div class="list-group"
+        [class.correct]="isGraded && isRightAnswer"
+        [class.wrong]="isGraded && !isRightAnswer">
+        <input [disabled]="isGraded" type="radio" [(ngModel)]="answer" name="{{question._id}}" value="true" id="{{question._id}}-true" />
+        <label class="list-group-item" for="{{question._id}}-true">True
+            <i [class.fa-check]="isGraded && question.correct === 'true'" 
+                [class.fa-times]="isGraded && question.correct === 'false'"
+                class="fas float-right"></i>
+        </label>
+    </div>
+    <div class="list-group"
+        [class.correct]="isGraded && isRightAnswer"
+        [class.wrong]="isGraded && !isRightAnswer">
+        <input [disabled]="isGraded" type="radio" [(ngModel)]="answer" name="{{question._id}}" value="false" id="{{question._id}}-false" />
+        <label class="list-group-item" for="{{question._id}}-false">False
+            <i [class.fa-check]="isGraded && question.correct === 'false'" 
+                [class.fa-times]="isGraded && question.correct === 'true'"
+                class="fas float-right"></i></label>
+    </div>
+    <div [hidden]="answer === ''">Your answer: {{answer}}</div>
+    <div>
+        <button [hidden]="isGraded" (click)="grade()" class="btn btn-success" id="{{question._id}}-grade">
+            Grade
+        </button>
+    </div>
+</div>
