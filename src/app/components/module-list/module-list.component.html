@@ -1,7 +1,7 @@
 <ul class="nav nav-pills flex-column wbdv-module-list">
-
-  <li *ngFor="let module of modules" class="nav-item wbdv-module-item"><span>
-      <div class="mt-1 wbdv-clickable"><a [routerLink]="['/table/courses',courseId,'modules',module._id,'lessons']"
+  <li *ngFor="let module of modules" class="nav-item wbdv-module-item"
+  [class.wbdv-highlight]="currentModule === module._id"><span>
+      <div class="mt-1 nav-link"><a [routerLink]="['/table/courses',courseId,'modules',module._id,'lessons']"
           routerLinkActive="router-link-active">{{module.title}}</a>
       </div>
 
