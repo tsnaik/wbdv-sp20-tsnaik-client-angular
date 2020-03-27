@@ -1,4 +1,4 @@
-import { QuizServiceClient } from './../../services/quiz.service.client';
+import { QuestionServiceClient } from './../../services/question.service.client';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,14 +8,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-  public courseId: string;
-  quizzes = [];
-  constructor(private service: QuizServiceClient, private route: ActivatedRoute) { }
+  quizId: string;
+  questions = [];
+  constructor(private service: QuestionServiceClient, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(async (params) => {
-      
-      // const  = await this.service.findModulesForCourse(this.courseId);
+      this.quizId = params.quizId;
+      this.questions = await this.service.findQuestionsForQuiz(this.quizId);
     });
   }
 
