@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CourseServiceClient {
-    private URL = 'http://wbdv-generic-server.herokuapp.com/api/tsnaik';
+    private URL = 'https://wbdv-generic-server.herokuapp.com/api/tsnaik';
     public findAllCourses = () =>
         fetch(this.URL + '/courses')
             .then((response) => response.json())
