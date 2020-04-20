@@ -1,14 +1,21 @@
 <div class="container">
-<h2>Quizzes</h2>
-<ul class="list-group">
-  <li *ngFor="let quiz of quizzes" class="list-group-item">
-    <a routerLink="/table/courses/{{courseId}}/quizzes/{{quiz._id}}">
-      {{quiz.title}}
-    </a>
-    <a class="btn btn-primary float-right"
-       routerLink="/table/courses/{{courseId}}/quizzes/{{quiz._id}}">
-      Start
-    </a>
-  </li>
-</ul>
+  <h2>Quizzes</h2>
+  <div *ngFor="let quiz of quizzes" class="card mb-3">
+    <div class="card-header">
+      <a routerLink="/table/courses/{{courseId}}/quizzes/{{quiz._id}}">
+        {{quiz.title}}
+      </a>
+    </div>
+    <div class="card-body">
+      <a class="btn btn-primary" routerLink="/table/courses/{{courseId}}/quizzes/{{quiz._id}}">
+        Start
+      </a>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let attempt of quiz.attempts; index as i" class="list-group-item">
+          Attempt {{i}} :{{attempt.score}}%
+        </li>
+      </ul>
+    </div>
+  </div>
+
 </div>

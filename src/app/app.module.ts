@@ -1,4 +1,4 @@
-import { CourseServiceClient } from './services/CourseServiceClient';
+import { CourseServiceClient } from './services/course.service.client';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

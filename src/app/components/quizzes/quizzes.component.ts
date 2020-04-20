@@ -14,11 +14,13 @@ export class QuizzesComponent implements OnInit {
   ) { }
   courseId = ''
   quizzes = []
-
   ngOnInit(): void {
     this.route.params.subscribe(async (params) => {
       this.courseId = params.courseId;
       this.quizzes = await this.service.findAllQuizzes();
+      this.quizzes.forEach(async quiz => {
+        quiz.attempts = await this.service.findAttemptsForQuiz(quiz._id);
+      });
     });
 
   }

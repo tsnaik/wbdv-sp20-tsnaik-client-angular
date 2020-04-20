@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseServiceClient } from 'src/app/services/CourseServiceClient';
+import { CourseServiceClient } from 'src/app/services/course.service.client';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

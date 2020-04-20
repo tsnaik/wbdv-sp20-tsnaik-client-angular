@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-true-false-question',
@@ -10,7 +10,7 @@ export class TrueFalseQuestionComponent implements OnInit {
   isGraded = false;
   isRightAnswer = false;
   public grade = () => {
-    if(this.answer === '') {
+    if (this.answer === '') {
       return;
     }
     this.isRightAnswer = (this.answer === this.question.correct);
@@ -19,7 +19,15 @@ export class TrueFalseQuestionComponent implements OnInit {
   constructor() { }
   @Input()
   question;
-  answer ='';
+  
+  @Input()
+  answer = '';
+
+  @Output()
+  answerChange = new EventEmitter<string>()
+  submitAnswer = () =>{
+    this.answerChange.emit(this.answer)
+}
   ngOnInit(): void {
   }
 

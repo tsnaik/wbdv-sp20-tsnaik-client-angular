@@ -1,4 +1,4 @@
-import { CourseServiceClient } from './../../services/CourseServiceClient';
+import { CourseServiceClient } from '../../services/course.service.client';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
